@@ -1,5 +1,4 @@
 import WelcomeMessage from './components/WelcomeMessage';
-import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
@@ -9,20 +8,20 @@ import Footer from './components/Footer';
 import UserProfile from './components/UserProfile';
 import React from 'react';
 import ProfilePage from './components/ProfilePage';
-import UserContext from './UserContext';
+import { UserContext } from './UserContext'; // Ensure this path is correct
 
 function App() {
-  const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
+  const userData = { name: "Jane Doe", age: "30", bio: "Enthusiastic software developer", email: "jane.doe@example.com" };
 
   return (
     <div className="App">
       <WelcomeMessage />
       <Header />
       <MainContent />
-      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
       <UserContext.Provider value={userData}>
-      <ProfilePage />
-    </UserContext.Provider>
+        <UserProfile />
+        <ProfilePage />
+      </UserContext.Provider>
       <Footer />
       <div>
         <a href="https://vitejs.dev" target="_blank">
