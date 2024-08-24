@@ -1,7 +1,9 @@
 import { create } from 'zustand'
 
-const useRecipeStore = create((set) => ({
+const useRecipeStore = create((set, get) => ({
   recipes: [],
+  searchTerm: '',
+  filteredRecipes: [],
   addRecipe: (newRecipe) => set((state) => ({ 
     recipes: [...state.recipes, { ...newRecipe, id: Date.now() }] 
   })),
@@ -13,7 +15,29 @@ const useRecipeStore = create((set) => ({
       recipe.id === id ? { ...recipe, ...updatedRecipe } : recipe
     )
   })),
-  setRecipes: (recipes) => set({ recipes })
+  setRecipes: (recipes) => set({ recipes }),
+  setSearchTerm: (term) => {
+    set({ searchTerm: term })
+    get().filterRecipes()
+  },
+  filterRecipes: () => set((state) => ({
+    filteredRecipes: state.recipes.filter(recipe => {
+      const matchesSearch = 
+        recipe.title.toLowerCase().includes(state.searchTerm.toLowerCase()) ||
+        recipe.description.toLowerCase().includes(state.searchTerm.toLowerCase())
+  
+      switch(state.searchTerm) {
+        case 'quick':
+          return matchesSearch && recipe.prepTime < 30
+        case 'vegetarian':
+          return matchesSearch && recipe.isVegetarian
+        case 'dessert':
+          return matchesSearch && recipe.category === 'dessert'
+        default:
+          return matchesSearch
+      }
+    })
+  })),
 }))
 
 export default useRecipeStore
