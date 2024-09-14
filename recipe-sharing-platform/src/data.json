@@ -3,24 +3,56 @@
       "id": 1,
       "title": "Spaghetti Carbonara",
       "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-      "image": "https://via.placeholder.com/150"
+      "image": "https://via.placeholder.com/150",
+      "ingredients": [
+        "400g spaghetti",
+        "200g pancetta or guanciale, diced",
+        "4 large eggs",
+        "100g Pecorino Romano cheese, grated",
+        "100g Parmigiano-Reggiano cheese, grated",
+        "Freshly ground black pepper",
+        "Salt"
+      ],
+      "instructions": [
+        "Bring a large pot of salted water to boil and cook spaghetti according to package instructions.",
+        "While pasta is cooking, fry pancetta in a large pan until crispy.",
+        "In a bowl, whisk together eggs, grated cheeses, and black pepper.",
+        "Drain pasta, reserving 1 cup of pasta water.",
+        "Add hot pasta to the pan with pancetta, remove from heat.",
+        "Quickly stir in the egg and cheese mixture, adding pasta water as needed to create a creamy sauce.",
+        "Serve immediately with extra grated cheese and black pepper."
+      ]
     },
     {
       "id": 2,
       "title": "Chicken Tikka Masala",
       "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 3,
-      "title": "Vegetarian Buddha Bowl",
-      "summary": "A nourishing bowl filled with quinoa, roasted vegetables, avocado, and a tahini dressing.",
-      "image": "https://via.placeholder.com/150"
-    },
-    {
-      "id": 4,
-      "title": "Classic Beef Burger",
-      "summary": "Juicy beef patty with lettuce, tomato, cheese, and special sauce in a soft bun.",
-      "image": "https://via.placeholder.com/150"
+      "image": "https://via.placeholder.com/150",
+      "ingredients": [
+        "800g boneless chicken, cut into cubes",
+        "1 cup yogurt",
+        "2 tbsp lemon juice",
+        "2 tsp turmeric powder",
+        "2 tsp garam masala",
+        "2 tsp cumin powder",
+        "2 tbsp vegetable oil",
+        "1 large onion, finely chopped",
+        "3 garlic cloves, minced",
+        "1 tbsp ginger, grated",
+        "400g canned tomatoes",
+        "1 cup heavy cream",
+        "Fresh cilantro for garnish"
+      ],
+      "instructions": [
+        "Marinate chicken in yogurt, lemon juice, and half of the spices for at least 2 hours.",
+        "Grill or pan-fry the marinated chicken until cooked through.",
+        "In a large pan, heat oil and sauté onions until golden brown.",
+        "Add garlic and ginger, cook for another minute.",
+        "Add remaining spices and cook until fragrant.",
+        "Add canned tomatoes and simmer for 10 minutes.",
+        "Blend the sauce until smooth, then return to the pan.",
+        "Add grilled chicken and cream, simmer for 5-10 minutes.",
+        "Garnish with cilantro and serve with naan bread or rice."
+      ]
     }
   ]
