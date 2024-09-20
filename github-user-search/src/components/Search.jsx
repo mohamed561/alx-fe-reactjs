@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { searchUsers } from '../services/githubService';
+import { fetchUserData } from '../services/githubService';
 
 const Search = () => {
   const [query, setQuery] = useState('');
@@ -18,7 +18,7 @@ const Search = () => {
     setPage(1);
 
     try {
-      const data = await searchUsers(query, location, minRepos);
+      const data = await fetchUserData(query, location, minRepos);
       setUsers(data.items);
     } catch (error) {
       setError('An error occurred while searching for users');
@@ -30,7 +30,7 @@ const Search = () => {
   const loadMore = async () => {
     setLoading(true);
     try {
-      const data = await searchUsers(query, location, minRepos, page + 1);
+      const data = await fetchUserData(query, location, minRepos, page + 1);
       setUsers(prevUsers => [...prevUsers, ...data.items]);
       setPage(prevPage => prevPage + 1);
     } catch (error) {
