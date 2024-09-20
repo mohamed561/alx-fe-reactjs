@@ -1,14 +1,14 @@
-import React from 'react'
-import './App.css'
+import React from 'react';
+import './App.css';
+import Search from './components/Search';
 
 function App() {
   return (
     <div className="App">
       <h1>GitHub User Search</h1>
-      {/* Search component will go here */}
-      {/* Results component will go here */}
+      <Search />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
