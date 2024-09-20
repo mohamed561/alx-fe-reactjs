@@ -31,8 +31,8 @@ const Search = () => {
     setLoading(true);
     try {
       const data = await searchUsers(query, location, minRepos, page + 1);
-      setUsers([...users, ...data.items]);
-      setPage(page + 1);
+      setUsers(prevUsers => [...prevUsers, ...data.items]);
+      setPage(prevPage => prevPage + 1);
     } catch (error) {
       setError('An error occurred while loading more users');
     } finally {
@@ -77,11 +77,12 @@ const Search = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {users.map(user => (
-          <div key={user.id} className="border rounded p-4">
-            <img src={user.avatar_url} alt={`${user.login}'s avatar`} className="w-24 h-24 rounded-full mx-auto" />
+          <div key={user.id} className="border rounded p-4 flex flex-col items-center">
+            <img src={user.avatar_url} alt={`${user.login}'s avatar`} className="w-24 h-24 rounded-full" />
             <h2 className="text-xl font-bold mt-2">{user.login}</h2>
             <p className="text-gray-600">{user.type}</p>
-            <a href={user.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+            <p className="mt-2">Score: {user.score}</p>
+            <a href={user.html_url} target="_blank" rel="noopener noreferrer" className="mt-2 text-blue-500 hover:underline">
               View Profile
             </a>
           </div>
